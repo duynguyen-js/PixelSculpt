@@ -1,0 +1,39 @@
+* {
+  font-family: Montserrat;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .logo {
+      max-width: 5rem;
+    }
+  }
+  .create-button {
+    background-color: #6469ff;
+    border: none;
+    border-radius: .3rem;
+    color: white;
+    padding: .7rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+
+main {
+  background-color: #f9fafe;
+  height: 100vh;
+}
