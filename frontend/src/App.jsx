@@ -14,7 +14,7 @@ const App = () => {
           className="logo-container"
         >
           <img src={logo} alt="logo" className="logo" />
-          <h1>ImageX</h1>
+          <h2>ImageX</h2>
         </Link>
 
         <Link to="/create-post">
