@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import LoadingSpinner from "../loadingSpinner/LoadingSpinner"
 import './home.scss'
 import Card from '../card/Card'
 import CreatePost from '../createPost/CreatePost'
@@ -7,7 +7,7 @@ import FormField from "../createPost/formField/FormField";
 import RenderCards from "./renderCards/RenderCards";
 
 const Home = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [allPosts, setAllPosts] = useState(null)
   const [search, setSearch] = useState('');
   return (
@@ -25,17 +25,7 @@ const Home = () => {
       </div>
 
       <div className="loading-container">
-        {loading ? (
-          <div className="loading">
-            <ClimbingBoxLoader
-              color="black"
-              loading={loading}
-              size={15}
-              aria-label="Loading Spinner"
-            />
-            <p>Just a few more seconds...</p>
-          </div>
-        ) : (
+        {loading ? <LoadingSpinner loading={loading}/> : (
           <>
             {search && (
               <h2 className="search-text">

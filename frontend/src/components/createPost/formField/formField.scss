@@ -1,0 +1,42 @@
+.form-container {
+  margin: 1.2rem 0;
+
+  input {
+    padding: 0.8rem;
+    width: 50rem;
+    border-radius: 0.5rem;
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: white;
+    margin: .5rem 0;
+
+
+    &:focus {
+      transform: scale(1.01);
+      transition: .3s;
+      border: unset;
+    }
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 0.4rem;
+      padding: 0.2rem 0.4rem;
+      background-color: #ECECF1;
+      cursor: pointer;
+
+      img {
+        max-width: 1.5rem;
+      }
+    }
+  }
+}
