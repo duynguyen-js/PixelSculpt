@@ -13,7 +13,7 @@ const app = express();
 dotenv.config();
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
-app.use('/api/vi/post', postRoutes);
+app.use('/api/v1/post', postRoutes);
 app.use('/api/v1/dalle', dalleRoutes);
 
 // starts server

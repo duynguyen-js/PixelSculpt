@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { preview } from '../../assets'
 import FormField from './formField/FormField'
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
-import getRandomPrompt from '../../utils/index'
+import { getRandomPrompt } from '../../utils/index'
 import LoadingSpinner from '../loadingSpinner/LoadingSpinner'
 
 const CreatePost = () => {
@@ -19,8 +19,33 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false)
   const [prompt, setPrompt] = useState(getRandomPrompt())
 
-  const handleSubmit = () => {
-    return
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if(form.prompt && form.prompt) {
+      setLoading(true);
+      
+      try {
+        const response = await fetch('http://localhost:8080/api/v1/post', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+
+          },
+          body: JSON.stringify(form)
+        })
+
+        console.log(await response.text())
+        navigate('/')
+      } catch(error) {
+        console.log(error)
+      } finally {
+        setLoading(false)
+      }
+    } else {
+      alert('Please fill in all required fields before hitting generate')
+    }
   }
 
   const handleChange = (e) => {

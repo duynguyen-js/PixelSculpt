@@ -7,9 +7,37 @@ import FormField from "../createPost/formField/FormField";
 import RenderCards from "./renderCards/RenderCards";
 
 const Home = () => {
-  const [loading, setLoading] = useState(true)
-  const [allPosts, setAllPosts] = useState(null)
-  const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [allPosts, setAllPosts] = useState(null);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const fetchAllPosts = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("http://localhost:8080/api/v1/post", {
+          method: "GET",
+          headers: {
+            "CONTENT-TYPE": "application/json",
+          },
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          setAllPosts(result.data.reverse());
+        }
+      } catch (error) {
+        alert(error);
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+
+    fetchAllPosts();
+  }, []);
+
   return (
     <section>
       <div className="text-container">
@@ -25,7 +53,9 @@ const Home = () => {
       </div>
 
       <div className="loading-container">
-        {loading ? <LoadingSpinner loading={loading}/> : (
+        {loading ? (
+          <LoadingSpinner loading={loading} />
+        ) : (
           <>
             {search && (
               <h2 className="search-text">
@@ -35,15 +65,9 @@ const Home = () => {
 
             <div className="image-grid">
               {search ? (
-                <RenderCards 
-                  data={[]}
-                  title="No search results found"
-                />
-              ) : ( 
-                <RenderCards 
-                  data={[]}
-                  title="No posts found"
-                />
+                <RenderCards data={allPosts} title="No search results found" />
+              ) : (
+                <RenderCards data={allPosts} title="No posts found" />
               )}
             </div>
           </>

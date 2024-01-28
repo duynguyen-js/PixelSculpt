@@ -1,7 +1,7 @@
 import React from 'react'
 import './formField.scss'
 import  star  from '../../../assets/star.png'
-import getRandomPrompt from '../../../utils';
+import { getRandomPrompt } from '../../../utils';
 
 const FormField = ({ labelName, type, name, value, placeholder, handleChange, isSurpriseMe, handleSurpriseMe}) => {
   return (

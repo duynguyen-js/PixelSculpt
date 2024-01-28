@@ -1,4 +1,4 @@
-section {
+ section {
   max-width: 1400px;
   margin: auto;
 
@@ -34,7 +34,7 @@ section {
 
     .image-grid {
       display: grid;
-      grid-column: 4;
+      grid-template-columns: repeat(3, 1fr);
       gap: .5rem;
     }
   }
