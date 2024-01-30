@@ -5,11 +5,14 @@ import Card from '../card/Card'
 import CreatePost from '../createPost/CreatePost'
 import FormField from "../createPost/formField/FormField";
 import RenderCards from "./renderCards/RenderCards";
+import { search } from "../../assets/index"
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
   const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState(null);
+  const [searchTimeOut, setSearchTimeOut] = useState(null);
 
   useEffect(() => {
     const fetchAllPosts = async () => {
@@ -38,6 +41,26 @@ const Home = () => {
     fetchAllPosts();
   }, []);
 
+const handleSearchChange = (e) => {
+  clearTimeout(searchTimeOut)
+  const inputValue = e.target.value;
+
+  setSearch(inputValue);
+
+  setSearchTimeOut(
+    setTimeout(() => {
+      const searchResults = allPosts.filter(
+        (item) =>
+          item.name.toLowerCase().includes(inputValue.toLowerCase()) ||
+          item.prompt.toLowerCase().includes(inputValue.toLowerCase())
+      );
+
+      setSearchResults(searchResults);
+    }, 500)
+  );
+};
+
+
   return (
     <section>
       <div className="text-container">
@@ -49,7 +72,14 @@ const Home = () => {
       </div>
 
       <div className="form-field-container">
-        <FormField />
+        <FormField 
+          labelName="Search posts"
+          type="text"
+          name="text"
+          placeholder={search}
+          value={search}
+          handleChange={handleSearchChange}
+        />
       </div>
 
       <div className="loading-container">
@@ -65,7 +95,7 @@ const Home = () => {
 
             <div className="image-grid">
               {search ? (
-                <RenderCards data={allPosts} title="No search results found" />
+                <RenderCards data={searchResults} title="No search results found" />
               ) : (
                 <RenderCards data={allPosts} title="No posts found" />
               )}

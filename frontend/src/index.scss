@@ -1,13 +1,17 @@
 * {
   font-family: Montserrat;
   margin: 0;
+  color: #F3F8F2;
 }
-
+body {
+  background-color: #1F1F1E;
+}
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  background-color: #393E41;
 
   .logo-container {
     display: flex;
@@ -18,11 +22,22 @@ header {
     }
 
     .logo {
-      max-width: 5rem;
+      max-width: 4rem;
+      margin: .8rem;
     }
   }
+
+  .logo-container:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+  }
+
+  .logo-container:active {
+    transform: scale(0.95);
+    transition: 0.1s;
+  }
   .create-button {
-    background-color: #6469ff;
+    background-color: #3F88C5;
     border: none;
     border-radius: .3rem;
     color: white;
@@ -31,10 +46,13 @@ header {
     font-weight: 500;
     cursor: pointer;
   }
-}
 
-main {
-  background-color: #f9fafe;
-  height: calc(100vh - 80px);
-  
+  .create-button:hover {
+    transform: scale(1.1);
+    transition: .3s;
+  }
+  .create-button:active {
+    transform: scale(0.95);
+    transition: .1s;
+  }
 }

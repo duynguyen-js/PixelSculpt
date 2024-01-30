@@ -7,8 +7,9 @@
     border-radius: 0.5rem;
     border: none;
     border-bottom: 1px solid gray;
-    background-color: white;
+    background-color: #EFF1F3;
     margin: .5rem 0;
+    color: black;
 
 
     &:focus {
@@ -31,12 +32,21 @@
       border: none;
       border-radius: 0.4rem;
       padding: 0.2rem 0.4rem;
-      background-color: #ECECF1;
+      background-color: #B48B7D;
       cursor: pointer;
 
       img {
         max-width: 1.5rem;
       }
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      transition: .2s;
+    }
+    button:active {
+      transform: scale(0.99);
+      transition: .1s;
     }
   }
 }

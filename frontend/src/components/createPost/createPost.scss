@@ -6,7 +6,7 @@ section {
     padding-top: 1rem;
     h1 {
       font-weight: bold;
-      color: #222328;
+      color: #F6F7EB;
       margin-bottom: .5rem;
     }
 
@@ -28,7 +28,7 @@ section {
         min-width: 20rem;
         min-height: 20rem;
         border: 1px solid gray;
-        background-color: white;
+        background-color: #EFF1F3;
         border-radius: 1rem;
         justify-content: center;
         align-items: center;
@@ -71,11 +71,24 @@ section {
     }
     .generate {
       width: 10rem;
-      background: #D17A22;
+      background: #B48B7D;
+      
     }
     .share {
-      background-color: #6469ff;
+      margin-top: .5rem;
+      background-color: #3F88C5;
       width: 20rem;
+    }
+
+    .generate:hover,
+    .share:hover {
+      transform: scale(1.05);
+      transition: .2s;
+    }
+    .generate:active,
+    .share:active {
+      transform: scale(0.95);
+      transition: .1s;
     }
   }
 }

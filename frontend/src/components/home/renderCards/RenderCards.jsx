@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../../../components/card/Card'
-import './renderCards.scss'
+
 
 
 const RenderCards = ({ data, title }) => {

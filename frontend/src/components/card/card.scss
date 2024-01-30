@@ -48,7 +48,7 @@
 
       div {
         color: white;
-        background: green;
+        background: #D77A61;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -67,13 +67,28 @@
     display: flex;
     opacity: 0.8;
     transition: .3s;
+
   }
   button {
-    outline: none;
+    all: unset;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
 
     img {
     background: transparent;
-      max-width: 1rem;
+      max-width: 2rem;
     }
+  }
+
+  button:hover {
+    transform: scale(1.15);
+    transition: .3s;
+    border: white;
+  }
+
+  button:active {
+    transform: scale(0.95);
+    transition: .1s;
   }
 }
