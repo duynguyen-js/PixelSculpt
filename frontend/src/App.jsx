@@ -14,7 +14,7 @@ const App = () => {
           className="logo-container"
         >
           <img src={logo} alt="logo" className="logo" />
-          <h2>ImageX</h2>
+          <h2>PixelSculpt</h2>
         </Link>
 
         <Link to="/create-post">

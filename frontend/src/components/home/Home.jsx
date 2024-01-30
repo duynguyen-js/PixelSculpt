@@ -65,14 +65,14 @@ const handleSearchChange = (e) => {
     <section>
       <div className="text-container">
         <h1>The Community Showcase</h1>
-        <p>
-          Browse through a collection of imaginative and visually stunning
-          images generated using the DALL-E AI
+        <p className="hero-text">
+          Explore a gallery of visually captivating images crafted by actual
+          users through the innovative DALL-E AI.
         </p>
       </div>
 
       <div className="form-field-container">
-        <FormField 
+        <FormField
           labelName="Search posts"
           type="text"
           name="text"
@@ -95,7 +95,10 @@ const handleSearchChange = (e) => {
 
             <div className="image-grid">
               {search ? (
-                <RenderCards data={searchResults} title="No search results found" />
+                <RenderCards
+                  data={searchResults}
+                  title="No search results found"
+                />
               ) : (
                 <RenderCards data={allPosts} title="No posts found" />
               )}

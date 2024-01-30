@@ -4,15 +4,16 @@
 
   .text-container {
     padding-top: 1rem;
+
     h1 {
       font-weight: bold;
-      color: white;
       margin-bottom: .5rem;
+      font-size: 1.5rem;
     }
 
-    p {
-      font-size: 1rem;
-      max-width: 800px;
+    .hero-text {
+      font-size: 1.05rem;
+
     }
   }
 
