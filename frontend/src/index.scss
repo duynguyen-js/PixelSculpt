@@ -10,7 +10,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 3rem;
   background-color: #393E41;
 
   .logo-container {
@@ -24,6 +24,26 @@ header {
     .logo {
       max-width: 4rem;
       margin: .8rem;
+    }
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    img {
+      max-width: 3rem;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+      transition: .3s;
+    }
+
+    img:active {
+      transform: scale(0.95);
+      transition: .1s;
     }
   }
 

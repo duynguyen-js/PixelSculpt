@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import {logo} from './assets/index'
 import Home from './components/home/Home'
 import CreatePost from './components/createPost/CreatePost'
+import { home } from './assets/index'
 
 const App = () => {
   return (
@@ -16,10 +17,14 @@ const App = () => {
           <img src={logo} alt="logo" className="logo" />
           <h2>PixelSculpt</h2>
         </Link>
-
-        <Link to="/create-post">
-          <button className="create-button">Create</button>
-        </Link>
+        <div className='nav-container'>
+          <Link to="/">
+            <img src={home} alt="home" />
+          </Link>
+          <Link to="/create-post">
+            <button className="create-button">Create</button>
+          </Link>
+        </div>
       </header>
 
       <main>

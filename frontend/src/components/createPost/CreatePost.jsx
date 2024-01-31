@@ -87,8 +87,8 @@ const CreatePost = () => {
       <div className="text-container">
         <h1>Create</h1>
         <p>
-          Create your own imaginative and visually stunning images from DALL-E
-          AI and share them with the community
+          Generate your own unique and visually captivating images using DALL-E AI, and
+          then showcase your work with the community.
         </p>
       </div>
       <form onSubmit={handleSubmit}>
@@ -130,24 +130,23 @@ const CreatePost = () => {
             )}
           </div>
 
-          <div className='button-container'>
-              <button
-                className='generate btn'
-                type='button'
-                onClick={generateImg}
-              >
-                {generatingImg ? 'Generating...' : 'Generate'}
-              </button>
+          <div className="button-container">
+            <button
+              className="generate btn"
+              type="button"
+              onClick={generateImg}
+            >
+              {generatingImg ? "Generating..." : "Generate"}
+            </button>
           </div>
         </div>
         <div>
-          <p>One you have created the image you want, you can share it with others in the community</p>
-          <button
-            className='share btn'
-            type='submit'
-
-          >
-          {loading ? "Sharing..." : "Share with the community"}
+          <p>
+            One you have created the image you want, you can share it with
+            others in the community
+          </p>
+          <button className="share btn" type="submit">
+            {loading ? "Sharing..." : "Share with the community"}
           </button>
         </div>
       </form>
