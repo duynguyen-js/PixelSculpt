@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 import express from "express";
-import mongoose from "mongoose";
 import dalleRoutes from './routes/dalleRoutes.js'
 import postRoutes from './routes/postRoutes.js'
 import cors from "cors";
